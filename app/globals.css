@@ -18,8 +18,6 @@ body {
 .app_title {
   width: 100%;
   text-align: center;
-  margin: 1rem 0;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .pdding_container {
@@ -80,4 +78,10 @@ body {
 }
 .todo_list li .btn {
   width: 25%;
+}
+
+@media (max-width: 430px) {
+  .container {
+    width: 95%;
+  }
 }/*# sourceMappingURL=globals.css.map */
