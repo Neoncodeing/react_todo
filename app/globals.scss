@@ -1,0 +1,88 @@
+$bColor:#D1D5DB;
+
+* {
+	box-sizing: border-box;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+body {
+	background-color: #F3F4F6;
+}
+
+.container {
+	width: 75%;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.app_title {
+	width: 100%;
+	text-align: center;
+}
+
+.pdding_container {
+	width: 100%;
+	padding: 1rem 0;
+	display: flex;
+	justify-content: space-between;
+}
+
+.input {
+	display: inline-block;
+	width: 100%;
+	border: solid 1px $bColor;
+	padding: 0.5rem;
+	background-color: #fff;
+	border-radius: 8px;
+
+	&[type="text"]:focus{
+		outline: solid 1px #0cf;
+	}
+}
+
+.btn {
+	display: inline-block;
+	border: solid 1px $bColor;
+	background-color: #fff;
+	padding: 0.5rem 1rem;
+	border-radius: 8px;
+	width: 45%;
+	box-shadow: 3px 3px 0px #000;
+	transition: all 0.1s ease-out;
+
+	&:active {
+		transform: translate(3px, 3px);
+		box-shadow: none;
+	}
+}
+
+.todo_list {
+	width: 100%;
+
+	& li {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		border-top: solid 1px $bColor;
+		border-left: solid 1px $bColor;
+		border-right: solid 1px $bColor;
+		padding: 0.5rem 1rem;
+		background-color: #fff;
+
+        &:first-child{
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+        }
+
+        &:last-child{
+            border-bottom: solid 1px $bColor;
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+        }
+
+        & .btn{
+            width: 25%;
+        }
+	}
+}

@@ -1,0 +1,4 @@
+export type TypeTodo = {
+    id?: number;
+    title?: string;
+} 
