@@ -17,12 +17,12 @@ const RotateAnime = () => {
 				<svg className="circleText" viewBox="0 0 100 100">
 					<path
 						id="circle"
-						className="circleText__circle"
+						className="circleText circle"
 						d="M 0 50 A 50 50 0 1 1 0 51 z"
 					/>
-					<text className="circleText__text">
+					<text className="circleText text">
 						<textPath xlinkHref="#circle">
-						TODO App by React + Next.js
+						TODO App by React + Next.js / NeonCode ★
 						</textPath>
 					</text>
 				</svg>
