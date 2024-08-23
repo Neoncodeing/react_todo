@@ -1,10 +1,11 @@
 import InputTodo from "./components/InputTodo";
+import RotateAnime from "./components/RotateAnime";
 
 export default function Home() {
   return (
     <main className="container">
-      <h1 className="app_title">TODO</h1>
       <InputTodo/>
+      <RotateAnime/>
     </main>
   );
 }
