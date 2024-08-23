@@ -22,7 +22,7 @@ const RotateAnime = () => {
 					/>
 					<text className="circleText__text">
 						<textPath xlinkHref="#circle">
-						const title = "TODO App by React + Next.js"
+						TODO App by React + Next.js
 						</textPath>
 					</text>
 				</svg>
