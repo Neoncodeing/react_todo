@@ -75,6 +75,7 @@ body {
 		padding: 0.5rem 1rem;
 		background-color: #fff;
 		text-align: left;
+		word-break : break-all;
 
 		&:first-child {
 			border-top-left-radius: 8px;
