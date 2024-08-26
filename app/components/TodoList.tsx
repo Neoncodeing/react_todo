@@ -1,5 +1,7 @@
 "use client";
 import { TypeTodo } from "../types/types";
+import { FaClipboard } from "react-icons/fa";
+import { FaTrashAlt } from "react-icons/fa";
 
 type Props = {
 	todos: TypeTodo[];
@@ -15,7 +17,7 @@ const TodoList = ({ todos, setTodos }: Props) => {
 
 	return (
 		<ul className="todo_list">
-			{todos.map((todo) => (
+			{/* {todos.map((todo) => (
 				<li key={todo.id}>
 					{todo.title}
 					<button
@@ -25,6 +27,24 @@ const TodoList = ({ todos, setTodos }: Props) => {
 					>
 						削除
 					</button>
+				</li>
+			))} */}
+			{todos.map((todo) => (
+				<li key={todo.id}>
+					{todo.title ? (todo.title.length > 25 ? todo.title.substring(0, 25) + '...' : todo.title.substring(0, 25)) : ''}
+					<div className="btn_wrap">
+						<button className="icon_btn" onClick={()=>{
+							navigator.clipboard.writeText(todo.title ? todo.title : '')
+							.then(()=>{
+								alert('todoをコピーしました。');
+							}).catch(err =>{
+								alert('todoをコピーできませんでした。')
+							});
+						}}><FaClipboard /></button>
+						<button className="icon_btn" onClick={handleClick} value={todo.id}>
+							<FaTrashAlt />
+						</button>
+					</div>
 				</li>
 			))}
 		</ul>

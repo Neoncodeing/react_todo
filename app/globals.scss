@@ -88,8 +88,26 @@ body {
 			border-bottom-right-radius: 8px;
 		}
 
+		& .btn_wrap{
+			display: flex;
+			gap: 0.75rem;
+		}
+
 		& .btn {
 			width: 25%;
+		}
+
+		& .icon_btn{
+			border: none;
+			background-color: #fff;
+			cursor: pointer;
+			color: grey;
+			&:hover:nth-child(1){
+				color: green;
+			}
+			&:hover:nth-child(2){
+				color: red;
+			}
 		}
 	}
 }

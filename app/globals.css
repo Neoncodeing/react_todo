@@ -82,8 +82,24 @@ body {
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
 }
+.todo_list li .btn_wrap {
+  display: flex;
+  gap: 0.75rem;
+}
 .todo_list li .btn {
   width: 25%;
+}
+.todo_list li .icon_btn {
+  border: none;
+  background-color: #fff;
+  cursor: pointer;
+  color: grey;
+}
+.todo_list li .icon_btn:hover:nth-child(1) {
+  color: green;
+}
+.todo_list li .icon_btn:hover:nth-child(2) {
+  color: red;
 }
 
 .spacer {
