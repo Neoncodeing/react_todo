@@ -1,5 +1,3 @@
-$bColor: #d1d5db;
-
 * {
 	box-sizing: border-box;
 	list-style: none;
@@ -26,6 +24,8 @@ body {
 	text-align: center;
 }
 
+// 入力フォーム
+
 .padding_container {
 	width: 100%;
 	padding: 1rem 0;
@@ -36,8 +36,8 @@ body {
 .input {
 	display: inline-block;
 	width: 100%;
-	border: solid 1px $bColor;
-	padding: 0.5rem;
+	border: solid 1px #d1d5db;
+	padding: 0.5rem 1rem;
 	background-color: #fff;
 	border-radius: 8px;
 
@@ -48,7 +48,7 @@ body {
 
 .btn {
 	display: inline-block;
-	border: solid 1px $bColor;
+	border: solid 1px #d1d5db;
 	background-color: #fff;
 	padding: 0.5rem 1rem;
 	border-radius: 8px;
@@ -62,6 +62,8 @@ body {
 	}
 }
 
+// TODOリスト
+
 .todo_list {
 	width: 100%;
 
@@ -69,13 +71,26 @@ body {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		border-top: solid 1px $bColor;
-		border-left: solid 1px $bColor;
-		border-right: solid 1px $bColor;
-		padding: 0.5rem 1rem;
+		border-top: solid 1px #d1d5db;
+		border-left: solid 1px #d1d5db;
+		border-right: solid 1px #d1d5db;
+		padding: 0 1rem;
 		background-color: #fff;
 		text-align: left;
-		word-break : break-all;
+
+		& .todo_title {
+			padding: 0.5rem 1rem;
+			flex: 1;
+			word-break: break-all;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+
+			&.completed{
+				text-decoration: line-through;
+				color: grey;
+			}
+		}
 
 		&:first-child {
 			border-top-left-radius: 8px;
@@ -88,8 +103,9 @@ body {
 			border-bottom-right-radius: 8px;
 		}
 
-		& .btn_wrap{
+		& .btn_wrap {
 			display: flex;
+			justify-content: space-around;
 			gap: 0.75rem;
 		}
 
@@ -97,16 +113,46 @@ body {
 			width: 25%;
 		}
 
-		& .icon_btn{
+		& .icon_btn {
 			border: none;
 			background-color: #fff;
 			cursor: pointer;
 			color: grey;
-			&:hover:nth-child(1){
+			font-size: 1rem;
+			position: relative;
+
+			&:hover:nth-child(1) {
 				color: green;
 			}
-			&:hover:nth-child(2){
+			&:hover:nth-child(2) {
 				color: red;
+			}
+
+			&::after{
+				content: attr(data-unit);
+				display: block;
+				padding: 0.5rem 1rem;
+				background-color: black;
+				position: absolute;
+				bottom: 0;
+				left: 50%;
+				transform: translate(-50%,100%);
+				border-radius: 8px;
+				color: #fff;
+				font-size: 0.75rem;
+				width: auto;
+				max-width: 300px;
+				white-space: nowrap;
+				z-index: 3;
+				opacity: 0;
+				pointer-events: none;
+				transition: all 0.5s ease-out;
+				
+			}
+
+			&:hover::after{
+				opacity: 1;
+				pointer-events: auto;
 			}
 		}
 	}
@@ -117,7 +163,9 @@ body {
 	height: 66px;
 }
 
-.rotate_container{
+// 背景アニメーション
+
+.rotate_container {
 	position: fixed;
 	inset: 0;
 	width: 100%;
@@ -125,6 +173,7 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	pointer-events: none;
 }
 
 .rotate_anime {
@@ -180,7 +229,7 @@ body {
 	}
 }
 
-// footer
+// フッター
 
 .footer {
 	display: grid;

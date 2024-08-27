@@ -35,7 +35,7 @@ body {
   display: inline-block;
   width: 100%;
   border: solid 1px #d1d5db;
-  padding: 0.5rem;
+  padding: 0.5rem 1rem;
   background-color: #fff;
   border-radius: 8px;
 }
@@ -68,10 +68,21 @@ body {
   border-top: solid 1px #d1d5db;
   border-left: solid 1px #d1d5db;
   border-right: solid 1px #d1d5db;
-  padding: 0.5rem 1rem;
+  padding: 0 1rem;
   background-color: #fff;
   text-align: left;
+}
+.todo_list li .todo_title {
+  padding: 0.5rem 1rem;
+  flex: 1;
   word-break: break-all;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.todo_list li .todo_title.completed {
+  text-decoration: line-through;
+  color: grey;
 }
 .todo_list li:first-child {
   border-top-left-radius: 8px;
@@ -84,6 +95,7 @@ body {
 }
 .todo_list li .btn_wrap {
   display: flex;
+  justify-content: space-around;
   gap: 0.75rem;
 }
 .todo_list li .btn {
@@ -94,12 +106,38 @@ body {
   background-color: #fff;
   cursor: pointer;
   color: grey;
+  font-size: 1rem;
+  position: relative;
 }
 .todo_list li .icon_btn:hover:nth-child(1) {
   color: green;
 }
 .todo_list li .icon_btn:hover:nth-child(2) {
   color: red;
+}
+.todo_list li .icon_btn::after {
+  content: attr(data-unit);
+  display: block;
+  padding: 0.5rem 1rem;
+  background-color: black;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 100%);
+  border-radius: 8px;
+  color: #fff;
+  font-size: 0.75rem;
+  width: auto;
+  max-width: 300px;
+  white-space: nowrap;
+  z-index: 3;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.5s ease-out;
+}
+.todo_list li .icon_btn:hover::after {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .spacer {
@@ -115,6 +153,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  pointer-events: none;
 }
 
 .rotate_anime {
